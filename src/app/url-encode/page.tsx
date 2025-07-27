@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ← 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function UrlEncoderDecoder() {
   const { language } = useLanguage();
@@ -37,6 +38,7 @@ export default function UrlEncoderDecoder() {
   return (
     <main className="max-w-xl mx-auto mt-12 px-4">
       <h1 className="text-2xl font-bold mb-6">{t.title}</h1>
+
       <textarea
         className="border border-gray-300 dark:border-zinc-700 rounded p-3 w-full mb-3 bg-white dark:bg-zinc-900 text-sm"
         rows={3}
@@ -44,6 +46,7 @@ export default function UrlEncoderDecoder() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
+
       <div className="flex gap-2 mb-4">
         <button
           onClick={encode}
@@ -58,18 +61,25 @@ export default function UrlEncoderDecoder() {
           {t.decodeButton}
         </button>
       </div>
-      <div className="mb-2">
+
+      {/* Encoded result */}
+      <div className="flex items-center justify-between mb-2">
         <strong>{t.encodedLabel}:</strong>
-        <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all">
-          {encoded}
-        </div>
+        <CopyButton text={encoded} />
       </div>
-      <div>
+      <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 min-h-[40px] max-w-full overflow-auto break-all mb-4">
+        {encoded}
+      </div>
+
+      {/* Decoded result */}
+      <div className="flex items-center justify-between mb-2">
         <strong>{t.decodedLabel}:</strong>
-        <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all">
-          {decoded}
-        </div>
+        <CopyButton text={decoded} />
       </div>
+      <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 min-h-[40px] max-w-full overflow-auto break-all">
+        {decoded}
+      </div>
+
       <ActionButtons
         onReset={reset}
         language={language}

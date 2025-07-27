@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ← 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function Slugify() {
   const { language } = useLanguage();
@@ -40,8 +41,11 @@ export default function Slugify() {
       >
         {t.convertButton}
       </button>
-      <div className="border p-2 break-all">
-        <strong>{t.resultLabel}:</strong> {slug}
+      <div className="flex items-center justify-between border p-2 break-all mb-4">
+        <span>
+          <strong>{t.resultLabel}:</strong> {slug}
+        </span>
+        <CopyButton text={slug} />
       </div>
       <ActionButtons
         onReset={reset}

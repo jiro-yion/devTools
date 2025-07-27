@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ✅ 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function CaseConverter() {
   const { language } = useLanguage();
@@ -66,13 +67,15 @@ export default function CaseConverter() {
           {t.buttons.camel}
         </button>
       </div>
-      <div className="border p-2 break-all mb-4">{output}</div>
+      <div className="flex items-center justify-between border p-2 break-all mb-4">
+        <span>{output}</span>
+        <CopyButton text={output} />
+      </div>
       <ActionButtons
         onReset={reset}
         language={language}
         translations={translations[language].actionButtons}
-      />{" "}
-      {/* ✅ 추가 */}
+      />
     </main>
   );
 }

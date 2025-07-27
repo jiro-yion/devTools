@@ -3,38 +3,45 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton";
+import CopyButton from "@/components/CopyButton";
 
 export default function ColorConverter() {
   const { language } = useLanguage();
   const t = translations[language].colorConverter;
 
-  const [hex, setHex] = useState("");
-  const [rgb, setRgb] = useState("");
+  // 입력값 상태
+  const [hexInput, setHexInput] = useState("");
+  const [rgbInput, setRgbInput] = useState("");
 
-  // HEX -> RGB 변환 함수
+  // 변환 결과 상태
+  const [convertedHex, setConvertedHex] = useState("");
+  const [convertedRgb, setConvertedRgb] = useState("");
+
+  // HEX -> RGB
   const toRgb = () => {
-    const cleanHex = hex.replace("#", "");
+    const cleanHex = hexInput.replace("#", "");
     if (cleanHex.length === 3) {
       const [r, g, b] = cleanHex.split("").map((c) => parseInt(c + c, 16));
-      setRgb(`rgb(${r}, ${g}, ${b})`);
+      setConvertedRgb(`rgb(${r}, ${g}, ${b})`);
     } else if (cleanHex.length === 6) {
       const r = parseInt(cleanHex.slice(0, 2), 16);
       const g = parseInt(cleanHex.slice(2, 4), 16);
       const b = parseInt(cleanHex.slice(4, 6), 16);
-      setRgb(`rgb(${r}, ${g}, ${b})`);
+      setConvertedRgb(`rgb(${r}, ${g}, ${b})`);
     } else {
-      setRgb(t.invalidHex);
+      setConvertedRgb(t.invalidHex);
     }
   };
 
-  // RGB -> HEX 변환 함수 (rgb(...) 형식 또는 쉼표로 구분된 숫자 허용)
+  // RGB -> HEX (쉼표만 입력도 허용)
   const toHex = () => {
     const match =
-      rgb.match(/^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/i) ||
-      rgb.match(/^\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*$/);
+      rgbInput.match(
+        /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/i
+      ) || rgbInput.match(/^\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*$/);
 
     if (!match) {
-      setHex(t.invalidRgb);
+      setConvertedHex(t.invalidRgb);
       return;
     }
     const [_, r, g, b] = match;
@@ -50,58 +57,67 @@ export default function ColorConverter() {
     const bHex = toHexComponent(b);
 
     if (rHex === null || gHex === null || bHex === null) {
-      setHex(t.invalidRgb);
+      setConvertedHex(t.invalidRgb);
       return;
     }
 
-    setHex(`#${rHex}${gHex}${bHex}`.toUpperCase());
+    setConvertedHex(`#${rHex}${gHex}${bHex}`.toUpperCase());
   };
 
   const reset = () => {
-    setHex("");
-    setRgb("");
+    setHexInput("");
+    setRgbInput("");
+    setConvertedHex("");
+    setConvertedRgb("");
   };
 
   return (
     <main className="max-w-xl mx-auto mt-12 px-4">
       <h1 className="text-2xl font-bold mb-6">{t.title}</h1>
 
-      {/* HEX 입력 및 변환 버튼 */}
+      {/* HEX → RGB */}
       <input
         type="text"
         className="border p-2 w-full mb-2"
         placeholder={t.inputHexPlaceholder}
-        value={hex}
-        onChange={(e) => setHex(e.target.value)}
+        value={hexInput}
+        onChange={(e) => setHexInput(e.target.value)}
       />
       <button
         onClick={toRgb}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4 w-full"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-2 w-full"
       >
         {t.convertHexToRgbButton}
       </button>
+      <div className="flex items-center justify-between border p-2 mb-4 break-all">
+        <span>
+          <strong>{t.rgbLabel || "RGB"}:</strong> {convertedRgb}
+        </span>
+        <CopyButton text={convertedRgb} />
+      </div>
 
-      {/* RGB 입력 및 변환 버튼 */}
+      <h1 className="text-2xl font-bold mb-6">{t.title2}</h1>
+      {/* RGB → HEX */}
       <input
         type="text"
         className="border p-2 w-full mb-2"
-        placeholder={t.inputRgbPlaceholder || "rgb(255, 255, 255)"}
-        value={rgb}
-        onChange={(e) => setRgb(e.target.value)}
+        placeholder={
+          t.inputRgbPlaceholder || "rgb(255, 255, 255) 또는 255,255,255"
+        }
+        value={rgbInput}
+        onChange={(e) => setRgbInput(e.target.value)}
       />
       <button
         onClick={toHex}
-        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mb-4 w-full"
+        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mb-2 w-full"
       >
-        {t.convertRgbToHexButton || "RGB → HEX 변환"}
+        {t.convertRgbToHexButton}
       </button>
-
-      {/* 결과 출력 */}
-      <div className="border p-2 mb-2 break-all">
-        <strong>{t.hexLabel || "HEX"}:</strong> {hex}
-      </div>
-      <div className="border p-2 break-all">
-        <strong>{t.rgbLabel || "RGB"}:</strong> {rgb}
+      <div className="flex items-center justify-between border p-2 mb-4 break-all">
+        <span>
+          <strong>{t.hexLabel || "HEX"}:</strong> {convertedHex}
+        </span>
+        <CopyButton text={convertedHex} />
       </div>
 
       <ActionButtons

@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
-import ActionButtons from "@/components/ActionButton"; // 추가
+import ActionButtons from "@/components/ActionButton";
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function BaseConverter() {
   const { language } = useLanguage();
@@ -105,7 +106,7 @@ export default function BaseConverter() {
       <button
         onClick={convert}
         disabled={!!error || input === ""}
-        className={`px-4 py-2 rounded mb-4 text-white ${
+        className={`px-4 py-2 rounded mb-4 text-white w-full ${
           error || input === ""
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-blue-600 hover:bg-blue-700"
@@ -114,20 +115,36 @@ export default function BaseConverter() {
         {t.convertButton}
       </button>
 
-      <div className="border p-2 mb-2">
-        {t.resultLabels.binary}: {binary}
+      {/* 결과 + 복사 버튼 */}
+      <div className="flex items-center justify-between border p-2 mb-2 break-all">
+        <span>
+          {t.resultLabels.binary}: {binary}
+        </span>
+        <CopyButton text={binary} />
       </div>
-      <div className="border p-2 mb-2">
-        {t.resultLabels.octal}: {octal}
+      <div className="flex items-center justify-between border p-2 mb-2 break-all">
+        <span>
+          {t.resultLabels.octal}: {octal}
+        </span>
+        <CopyButton text={octal} />
       </div>
-      <div className="border p-2 mb-2">
-        {t.resultLabels.decimal}: {decimal}
+      <div className="flex items-center justify-between border p-2 mb-2 break-all">
+        <span>
+          {t.resultLabels.decimal}: {decimal}
+        </span>
+        <CopyButton text={decimal} />
       </div>
-      <div className="border p-2 mb-2">
-        {t.resultLabels.hex}: {hex}
+      <div className="flex items-center justify-between border p-2 mb-2 break-all">
+        <span>
+          {t.resultLabels.hex}: {hex}
+        </span>
+        <CopyButton text={hex} />
       </div>
-      <div className="border p-2 mb-6">
-        {t.resultLabels.base32}: {base32}
+      <div className="flex items-center justify-between border p-2 mb-6 break-all">
+        <span>
+          {t.resultLabels.base32}: {base32}
+        </span>
+        <CopyButton text={base32} />
       </div>
 
       <ActionButtons

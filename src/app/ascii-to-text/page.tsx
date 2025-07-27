@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { translations } from "@/data/translation";
 import { useLanguage } from "@/context/LanguageContext";
-import ActionButtons from "@/components/ActionButton"; // 추가
+import ActionButtons from "@/components/ActionButton";
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function AsciiToText() {
   const { language } = useLanguage();
@@ -25,6 +26,7 @@ export default function AsciiToText() {
   return (
     <main className="max-w-xl mx-auto mt-12 px-4">
       <h1 className="text-2xl font-bold mb-6">{t.title}</h1>
+
       <textarea
         className="border border-gray-300 dark:border-zinc-700 rounded p-3 w-full mb-3 bg-white dark:bg-zinc-900 text-sm"
         rows={3}
@@ -32,14 +34,18 @@ export default function AsciiToText() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
+
       <button
         onClick={convert}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mb-4"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mb-4 w-full"
       >
         {t.button}
       </button>
-      <div className="border border-gray-200 dark:border-zinc-700 rounded p-3 min-h-[40px] bg-gray-50 dark:bg-zinc-800 whitespace-pre-wrap">
-        {output}
+
+      {/* 결과 + 복사 버튼 */}
+      <div className="flex items-center justify-between border border-gray-200 dark:border-zinc-700 rounded p-3 min-h-[40px] bg-gray-50 dark:bg-zinc-800 whitespace-pre-wrap break-all mb-2">
+        <span>{output}</span>
+        <CopyButton text={output} />
       </div>
 
       <ActionButtons

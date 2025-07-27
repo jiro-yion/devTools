@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ← 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function RandomPassword() {
   const { language } = useLanguage();
@@ -46,8 +47,9 @@ export default function RandomPassword() {
           {t.generateButton}
         </button>
       </div>
-      <div className="border border-gray-200 dark:border-zinc-700 rounded p-3 bg-gray-50 dark:bg-zinc-800 break-all">
-        {password}
+      <div className="flex items-center justify-between border border-gray-200 dark:border-zinc-700 rounded p-3 bg-gray-50 dark:bg-zinc-800 break-all mb-4">
+        <span>{password}</span>
+        <CopyButton text={password} />
       </div>
       <ActionButtons
         onReset={reset}

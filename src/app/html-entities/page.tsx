@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ✅ 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function HtmlEntities() {
   const { language } = useLanguage();
@@ -54,18 +55,22 @@ export default function HtmlEntities() {
           {t.decodeButton}
         </button>
       </div>
-      <div className="mb-2">
+      <div className="flex items-center justify-between mb-2">
         <strong>{t.encodeResultLabel}:</strong>
-        <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all">
-          {encoded}
-        </div>
+        <CopyButton text={encoded} />
       </div>
-      <div>
+      <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all mb-4">
+        {encoded}
+      </div>
+
+      <div className="flex items-center justify-between mb-2">
         <strong>{t.decodeResultLabel}:</strong>
-        <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all">
-          {decoded}
-        </div>
+        <CopyButton text={decoded} />
       </div>
+      <div className="border border-gray-200 dark:border-zinc-700 rounded p-2 bg-gray-50 dark:bg-zinc-800 break-all ">
+        {decoded}
+      </div>
+
       <ActionButtons
         onReset={reset}
         language={language}

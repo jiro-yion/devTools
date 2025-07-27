@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ✅ 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function HashGenerator() {
   const { language } = useLanguage();
@@ -41,7 +42,10 @@ export default function HashGenerator() {
       >
         {t.generateButton}
       </button>
-      <div className="border p-2 break-all">{hash}</div>
+      <div className="flex items-center justify-between border p-2 break-all">
+        <span>{hash}</span>
+        <CopyButton text={hash} />
+      </div>
       <ActionButtons
         onReset={reset}
         language={language}

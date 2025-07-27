@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ← 추가
+import CopyButton from "@/components/CopyButton"; // ← 추가
 
 export default function JsonFormatter() {
   const { language } = useLanguage();
@@ -44,6 +45,9 @@ export default function JsonFormatter() {
       <pre className="border border-gray-200 dark:border-zinc-700 rounded p-3 bg-gray-50 dark:bg-zinc-800 overflow-auto text-sm">
         {output}
       </pre>
+      <div className="flex items-center py-2 justify-between mb-2">
+        <CopyButton text={output} />
+      </div>
       <ActionButtons
         onReset={reset}
         language={language}

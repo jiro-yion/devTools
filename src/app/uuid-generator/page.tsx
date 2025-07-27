@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton";
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function UuidGenerator() {
   const { language } = useLanguage();
@@ -28,9 +29,11 @@ export default function UuidGenerator() {
       >
         {t.generateButton}
       </button>
-      <div className="border border-gray-200 dark:border-zinc-700 rounded p-3 bg-gray-50 dark:bg-zinc-800 break-all">
-        {uuid}
+      <div className="flex items-center justify-between border border-gray-200 dark:border-zinc-700 rounded p-3 bg-gray-50 dark:bg-zinc-800 break-all min-h-[52px]">
+        <span>{uuid}</span>
+        {uuid && <CopyButton text={uuid} />}
       </div>
+
       <ActionButtons
         onReset={reset}
         language={language}

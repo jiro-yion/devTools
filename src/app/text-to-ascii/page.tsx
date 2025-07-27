@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton"; // ← 추가
+import CopyButton from "@/components/CopyButton"; // ✅ 추가
 
 export default function TextToAscii() {
   const { language } = useLanguage();
@@ -40,8 +41,11 @@ export default function TextToAscii() {
       >
         {t.convertButton}
       </button>
-      <div className="border border-gray-200 dark:border-zinc-700 rounded p-3 min-h-[40px] bg-gray-50 dark:bg-zinc-800">
-        <strong>{t.resultLabel}:</strong> {output}
+      <div className="flex items-center justify-between border border-gray-200 dark:border-zinc-700 rounded p-3 min-h-[40px] bg-gray-50 dark:bg-zinc-800 break-all mb-4">
+        <span>
+          <strong>{t.resultLabel}:</strong> {output}
+        </span>
+        <CopyButton text={output} />
       </div>
       <ActionButtons
         onReset={reset}

@@ -82,6 +82,11 @@ export const translations = {
         label: "JSON Formatter",
         desc: "Format and sort JSON data",
       },
+      {
+        href: "/qr-code",
+        label: "QR Code Generator",
+        desc: "Convert text into a QR code and save ",
+      },
     ],
     asciiToText: {
       title: "ASCII → Text Converter",
@@ -131,7 +136,8 @@ export const translations = {
       },
     },
     colorConverter: {
-      title: "Color Converter",
+      title: "HEX -> RGB Converter",
+      title2: "RGB -> HEX Converter",
       inputPlaceholder: "Enter color in FFFFFF format",
       inputHexPlaceholder: "Enter color in FFFFFF format",
       inputRgbPlaceholder: "Enter color in 255, 255, 255 format",
@@ -183,11 +189,16 @@ export const translations = {
       resultLabel: "Result",
     },
     timestampConverter: {
-      title: "Unix Timestamp Converter",
+      title: "Timestamp → Date Converter",
+      title2: "Date → Timestamp Converter",
       timestampPlaceholder: "e.g. 1721456861",
       datePlaceholder: "e.g. 2025-07-20T12:00:00Z",
       toDateButton: "Timestamp → Date",
       toTimestampButton: "Date → Timestamp",
+      dateLabel: "Date",
+      timestampLabel: "Timestamp",
+      invalidTimestamp: "Invalid timestamp",
+      invalidDate: "Invalid date",
     },
     urlEncoderDecoder: {
       title: "URL Encoder/Decoder",
@@ -212,6 +223,13 @@ export const translations = {
     actionButtons: {
       backButton: "Go Back",
       resetButton: "Reset",
+    },
+    qrCodeGenerator: {
+      title: "QR Code Generator",
+      inputPlaceholder: "Enter text or URL to generate QR code",
+      actionButtons: {
+        reset: "Reset",
+      },
     },
   },
   ja: {
@@ -295,6 +313,11 @@ export const translations = {
         label: "JSONフォーマッター",
         desc: "JSONデータのフォーマットおよび整列",
       },
+      {
+        href: "/qr-code",
+        label: "QRコードジェネレーター",
+        desc: "テキストをQRコードに変換して保存で",
+      },
     ],
     asciiToText: {
       title: "ASCII → テキスト変換機",
@@ -344,7 +367,8 @@ export const translations = {
       },
     },
     colorConverter: {
-      title: "カラーコンバーター",
+      title: "HEX → RGBコンバーター",
+      title2: "RGB → HEXコンバーター",
       inputPlaceholder: "FFFFFF 形式で入力してください",
       inputHexPlaceholder: "FFFFFF 形式で入力してください",
       inputRgbPlaceholder: "255, 255, 255 形式で入力してください",
@@ -396,11 +420,16 @@ export const translations = {
       resultLabel: "結果",
     },
     timestampConverter: {
-      title: "Unix タイムスタンプ 変換機",
+      title: "タイムスタンプ → 日付 変換機",
+      title2: "日付 → タイムスタンプ 変換機",
       timestampPlaceholder: "例: 1721456861",
       datePlaceholder: "例: 2025-07-20T12:00:00Z",
       toDateButton: "タイムスタンプ → 日付",
       toTimestampButton: "日付 → タイムスタンプ",
+      dateLabel: "日付",
+      timestampLabel: "タイムスタンプ",
+      invalidTimestamp: "無効なタイムスタンプ",
+      invalidDate: "無効な日付",
     },
     urlEncoderDecoder: {
       title: "URL エンコード/デコード",
@@ -425,6 +454,13 @@ export const translations = {
     actionButtons: {
       backButton: "戻る",
       resetButton: "リセット",
+    },
+    qrCodeGenerator: {
+      title: "QRコードジェネレーター",
+      inputPlaceholder: "QRコードにするテキストやURLを入力してください",
+      actionButtons: {
+        reset: "リセット",
+      },
     },
   },
   ko: {
@@ -508,6 +544,11 @@ export const translations = {
         label: "JSON 포매터",
         desc: "JSON 데이터 포맷 및 정렬",
       },
+      {
+        href: "/qr-code",
+        label: "QR 코드 생성기",
+        desc: "텍스트를 QR 코드로 변환해 저장 ",
+      },
     ],
     asciiToText: {
       title: "ASCII → Text 변환기",
@@ -557,7 +598,8 @@ export const translations = {
       },
     },
     colorConverter: {
-      title: "색상 변환기",
+      title: "HEX -> RGB 변환기",
+      title2: "RGB -> HEX 변환기",
       inputPlaceholder: "FFFFFF 형식 입력",
       inputHexPlaceholder: "FFFFFF 형식 입력",
       inputRgbPlaceholder: "255, 255, 255 형식 입력",
@@ -608,11 +650,16 @@ export const translations = {
       resultLabel: "결과",
     },
     timestampConverter: {
-      title: "Unix Timestamp 변환기",
+      title: "타임스탬프 → 날짜 변환기",
+      title2: "날짜 → 타임스탬프 변환기",
       timestampPlaceholder: "예: 1721456861",
       datePlaceholder: "예: 2025-07-20T12:00:00Z",
       toDateButton: "타임스탬프 → 날짜",
       toTimestampButton: "날짜 → 타임스탬프",
+      dateLabel: "날짜",
+      timestampLabel: "타임스탬프",
+      invalidTimestamp: "유효하지 않은 타임스탬프",
+      invalidDate: "유효하지 않은 날짜",
     },
     urlEncoderDecoder: {
       title: "URL 인코딩/디코딩",
@@ -637,6 +684,13 @@ export const translations = {
     actionButtons: {
       backButton: "뒤로 가기",
       resetButton: "초기화",
+    },
+    qrCodeGenerator: {
+      title: "QR 코드 생성기",
+      inputPlaceholder: "QR 코드로 만들 텍스트 또는 URL 입력",
+      actionButtons: {
+        reset: "초기화",
+      },
     },
   },
 } as const;
