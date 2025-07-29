@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/prettier": "^2.7.3",
+    "base32.js": "^0.1.0",
     "i18next": "^25.3.2",
     "lucide-react": "^0.525.0",
+    "marked": "^16.1.1",
     "next": "15.4.2",
+    "prettier": "^3.6.2",
     "qrcode.react": "^4.2.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-i18next": "^15.6.1"
+    "react-i18next": "^15.6.1",
+    "react-markdown": "^10.1.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
