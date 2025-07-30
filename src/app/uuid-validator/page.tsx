@@ -3,10 +3,6 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton";
-import CopyButton from "@/components/CopyButton";
-
-const uuidRegex =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export default function UuidValidator() {
   const { language } = useLanguage();
@@ -14,15 +10,26 @@ export default function UuidValidator() {
 
   const [input, setInput] = useState("");
   const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [version, setVersion] = useState("");
 
   const validate = () => {
-    const valid = uuidRegex.test(input.trim());
+    const trimmed = input.trim().toLowerCase();
+    const uuidRegex =
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    const valid = uuidRegex.test(trimmed);
     setIsValid(valid);
+    if (valid) {
+      const detectedVersion = trimmed.charAt(14); // UUID 버전 위치
+      setVersion(detectedVersion);
+    } else {
+      setVersion("");
+    }
   };
 
   const reset = () => {
     setInput("");
     setIsValid(null);
+    setVersion("");
   };
 
   return (
@@ -31,13 +38,14 @@ export default function UuidValidator() {
 
       <input
         type="text"
-        className="border border-gray-300 dark:border-zinc-700 rounded p-2 w-full mb-3"
         placeholder={t.inputPlaceholder}
         value={input}
         onChange={(e) => {
           setInput(e.target.value);
           setIsValid(null);
+          setVersion("");
         }}
+        className="border border-gray-300 dark:border-zinc-700 rounded p-2 w-full mb-3 text-center"
       />
 
       <button
@@ -49,15 +57,20 @@ export default function UuidValidator() {
 
       {isValid !== null && (
         <div
-          className={`text-center font-semibold mb-4 ${
-            isValid ? "text-green-600" : "text-red-600"
+          className={`border rounded p-3 text-center ${
+            isValid
+              ? "border-green-500 bg-green-50 dark:bg-green-900/20"
+              : "border-red-500 bg-red-50 dark:bg-red-900/20"
           }`}
         >
-          {isValid ? t.valid : t.invalid}
+          {isValid ? t.validResult : t.invalidResult}
+          {isValid && version && (
+            <div className="mt-1 text-sm text-gray-500">
+              {t.versionLabel}: v{version}
+            </div>
+          )}
         </div>
       )}
-
-      {input && <CopyButton text={input} />}
 
       <ActionButtons
         onReset={reset}

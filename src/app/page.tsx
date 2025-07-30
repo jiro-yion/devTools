@@ -10,11 +10,14 @@ export default function Home() {
 
   const [search, setSearch] = useState("");
 
-  const filtered = t.tools.filter(
-    (tool) =>
-      tool.label.toLowerCase().includes(search.toLowerCase()) ||
-      tool.desc.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = t.tools.filter((tool) => {
+    const searchLower = search.toLowerCase();
+    return (
+      tool.label.toLowerCase().includes(searchLower) ||
+      tool.desc.toLowerCase().includes(searchLower) ||
+      tool.keywords?.some((kw) => kw.toLowerCase().includes(searchLower))
+    );
+  });
 
   return (
     <main className="max-w-5xl mx-auto mt-12 px-4">
