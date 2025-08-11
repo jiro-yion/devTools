@@ -31,10 +31,11 @@ function jsonToCsv(json: string): string {
     if (arr.length === 0) return "";
 
     const headers = Object.keys(arr[0]);
-    const lines = arr.map((obj: Record<string, any>) =>
-      headers
-        .map((header) => `"${String(obj[header] ?? "").replace(/"/g, '""')}"`)
-        .join(",")
+    const lines = arr.map(
+      (obj: Record<string, string | number | boolean | null>) =>
+        headers
+          .map((header) => `"${String(obj[header] ?? "").replace(/"/g, '""')}"`)
+          .join(",")
     );
     return headers.join(",") + "\n" + lines.join("\n");
   } catch {

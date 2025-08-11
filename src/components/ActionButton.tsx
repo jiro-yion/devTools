@@ -22,6 +22,7 @@ export default function ActionButtons({
       window.history.back();
     }
   };
+  console.debug("Current language:", language);
 
   return (
     <div className="flex gap-4 mt-4 mb-6 justify-center">

@@ -3,7 +3,16 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton";
-import CopyButton from "@/components/CopyButton"; // ✅ 추가
+import CopyButton from "@/components/CopyButton";
+
+// ✅ 컴포넌트 밖으로 이동
+const regexMap: { [key: string]: RegExp } = {
+  "2": /^[0-1]*$/i,
+  "8": /^[0-7]*$/i,
+  "10": /^[0-9]*$/i,
+  "16": /^[0-9a-f]*$/i,
+  "32": /^[0-9a-v]*$/i,
+};
 
 export default function BaseConverter() {
   const { language } = useLanguage();
@@ -17,14 +26,6 @@ export default function BaseConverter() {
   const [decimal, setDecimal] = useState("");
   const [hex, setHex] = useState("");
   const [base32, setBase32] = useState("");
-
-  const regexMap: { [key: string]: RegExp } = {
-    "2": /^[0-1]*$/i,
-    "8": /^[0-7]*$/i,
-    "10": /^[0-9]*$/i,
-    "16": /^[0-9a-f]*$/i,
-    "32": /^[0-9a-v]*$/i,
-  };
 
   useEffect(() => {
     if (!regexMap[inputBase].test(input)) {

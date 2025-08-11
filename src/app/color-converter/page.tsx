@@ -44,7 +44,7 @@ export default function ColorConverter() {
       setConvertedHex(t.invalidRgb);
       return;
     }
-    const [_, r, g, b] = match;
+    const [, r, g, b] = match;
 
     const toHexComponent = (numStr: string) => {
       const num = parseInt(numStr);

@@ -18,7 +18,7 @@ export default function RegexTester() {
       const regex = new RegExp(pattern, "g");
       const matches = text.match(regex) || [];
       setResult(matches);
-    } catch (e) {
+    } catch {
       setResult([t.invalidRegex || "Invalid regex pattern"]);
     }
   };

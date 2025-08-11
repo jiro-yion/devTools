@@ -13,8 +13,14 @@ export default function AsciiToText() {
   const [output, setOutput] = useState("");
 
   const convert = () => {
-    const chars = input.trim().split(/\s+/);
-    const text = chars.map((c) => String.fromCharCode(Number(c))).join("");
+    // 쉼표, 세미콜론, 공백, 탭, 줄바꿈 등으로 구분
+    const chars = input.trim().split(/[\s,;]+/);
+    const text = chars
+      .map((c) => {
+        const code = Number(c);
+        return isNaN(code) ? "" : String.fromCharCode(code);
+      })
+      .join("");
     setOutput(text);
   };
 

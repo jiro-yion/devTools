@@ -1393,7 +1393,7 @@ export const translations = {
     ],
     asciiToText: {
       title: "ASCII → Text 변환기",
-      placeholder: "예: 72 101 108 108 111",
+      placeholder: "예: 72 101 108 108 111 ",
       button: "변환",
     },
     baseConverter: {

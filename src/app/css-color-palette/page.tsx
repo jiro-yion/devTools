@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translation";
 import ActionButtons from "@/components/ActionButton";
-import CopyButton from "@/components/CopyButton";
+//import CopyButton from "@/components/CopyButton";
 
 // 색상 밝기 조절 함수 (간단한 밝기 조절)
 function adjustBrightness(hex: string, percent: number) {

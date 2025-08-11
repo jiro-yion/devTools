@@ -66,7 +66,7 @@ export default function JwtEncoderDecoder() {
       const prettyHeader = JSON.stringify(JSON.parse(header), null, 2);
       const prettyPayload = JSON.stringify(JSON.parse(payload), null, 2);
       setOutput(`Header:\n${prettyHeader}\n\nPayload:\n${prettyPayload}`);
-    } catch (e) {
+    } catch {
       setError(t.decodeError);
     }
   };
