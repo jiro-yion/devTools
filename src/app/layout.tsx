@@ -16,6 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8575073574860269"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className="antialiased bg-white text-gray-900 dark:bg-zinc-900 dark:text-gray-100 flex flex-col min-h-screen">
         <LanguageProvider>
           <Header /> {/* 항상 상단에 표시 */}
