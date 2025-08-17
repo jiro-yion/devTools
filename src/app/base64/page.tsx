@@ -83,6 +83,14 @@ export default function Base64EncoderDecoder() {
         language={language}
         translations={translations[language].actionButtons}
       />
+      <section className="mt-8 p-4 border border-gray-200 dark:border-zinc-700 rounded bg-gray-50 dark:bg-zinc-800 text-sm leading-relaxed">
+        <h2 className="font-semibold mb-2">{t.tutorial.title}</h2>
+        <ol className="list-decimal list-inside space-y-1">
+          {t.tutorial.steps.map((step, idx) => (
+            <li key={idx}>{step}</li>
+          ))}
+        </ol>
+      </section>
     </main>
   );
 }

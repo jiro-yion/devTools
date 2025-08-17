@@ -283,11 +283,27 @@ export const translations = {
         desc: "Validate if a string is a correct UUID",
         keywords: ["uuid", "validate", "validator", "check", "format", "id"],
       },
+      {
+        href: "/escape-converter",
+        label: "Escape Converter",
+        desc: "Convert strings into escape characters",
+        keywords: ["escape", "characters", "string", "converter"],
+      },
     ],
     asciiToText: {
       title: "ASCII → Text Converter",
       placeholder: "e.g. 72 101 108 108 111",
       button: "Convert",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the ASCII codes you want to convert. (e.g., 72 101 108 108 111)",
+          "You can separate numbers with spaces, commas, or semicolons.",
+          'Click the "Convert" button to turn the ASCII codes into text.',
+          "Use the copy button next to the result to copy the text.",
+          'Click "Reset" to clear both the input and the result.',
+        ],
+      },
     },
     baseConverter: {
       title: "Base Converter",
@@ -310,6 +326,16 @@ export const translations = {
         base32: "Base32",
       },
       invalidValue: "❌ Invalid input",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Select the input base (2, 8, 10, 16, or 32).",
+          "Enter a number that matches the selected base.",
+          "Click the 'Convert' button to see the results in binary, octal, decimal, hexadecimal, and base32.",
+          "Use the copy button next to each result to copy it to your clipboard.",
+          "Click the 'Reset' button to clear all inputs and results.",
+        ],
+      },
     },
     base64EncoderDecoder: {
       title: "Base64 Encode/Decode",
@@ -320,15 +346,37 @@ export const translations = {
       decodeResultLabel: "Decoded Result",
       encodeError: "⚠️ Encoding failed (check valid string)",
       decodeError: "⚠️ Decoding failed (check valid Base64 string)",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to convert.",
+          "Click the ‘Encode’ button to convert the text into Base64 format.",
+          "Click the ‘Decode’ button to convert the Base64 string back to the original text.",
+          "Use the copy button next to the result to copy it to your clipboard.",
+          "Click the ‘Reset’ button to clear the input and results.",
+        ],
+      },
     },
     caseConverter: {
       title: "Case Converter",
       placeholder: "Enter text...",
       buttons: {
-        upper: "UPPERCASE",
-        lower: "lowercase",
-        snake: "snake_case",
-        camel: "camelCase",
+        upper: "Uppercase",
+        lower: "Lowercase",
+        snake: "Snake Case",
+        camel: "Camel Case",
+      },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter your text in the input field.",
+          "Click the 'Uppercase' button to convert all letters to uppercase.",
+          "Click the 'Lowercase' button to convert all letters to lowercase.",
+          "Click the 'Snake Case' button to convert words to lowercase separated by underscores.",
+          "Click the 'Camel Case' button to convert text to camelCase format, with the first word lowercase and subsequent words capitalized.",
+          "The result will appear in the output field, and you can click the copy icon to copy it to the clipboard.",
+          "Click the 'Reset' button to clear both the input and output fields.",
+        ],
       },
     },
     colorConverter: {
@@ -344,12 +392,34 @@ export const translations = {
       invalidRgb: "Invalid RGB format.",
       hexLabel: "HEX",
       rgbLabel: "RGB",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter a HEX color code in the input field (e.g., #FF5733 or F53).",
+          "Click the 'HEX → RGB' button to convert it to RGB format.",
+          "The RGB result will appear in the output field, and you can copy it to the clipboard using the copy icon.",
+          "Enter an RGB value in the input field (e.g., rgb(255, 87, 51) or 255,87,51).",
+          "Click the 'RGB → HEX' button to convert it to HEX format.",
+          "The HEX result will appear in the output field, and you can copy it using the copy icon.",
+          "Click the 'Reset' button to clear all inputs and results.",
+        ],
+      },
     },
 
     hashGenerator: {
       title: "SHA-256 Hash Generator",
       inputPlaceholder: "Enter text...",
       generateButton: "Generate Hash",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to generate a hash for.",
+          "Click the 'Generate' button to create a SHA-256 hash.",
+          "The result will be displayed below as a hexadecimal string.",
+          "Click the copy button next to the result to copy the hash to the clipboard.",
+          "Click the 'Reset' button to clear both input and output fields.",
+        ],
+      },
     },
     htmlEntities: {
       title: "HTML Entities Encode/Decode",
@@ -358,12 +428,31 @@ export const translations = {
       decodeButton: "Decode",
       encodeResultLabel: "Encoded Result",
       decodeResultLabel: "Decoded Result",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to convert.",
+          "Click the 'Encode' button to convert it to HTML entities.",
+          "Click the 'Decode' button to convert HTML entities back to plain text.",
+          "Use the copy button next to the result to copy it to the clipboard.",
+          "Click the 'Reset' button to clear both input and output fields.",
+        ],
+      },
     },
     jsonFormatter: {
       title: "JSON Formatter",
       inputPlaceholder: '{"hello": "world"}',
       formatButton: "Format",
       invalidJson: "⚠️ Invalid JSON.",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter your JSON data.",
+          "Click the 'Format' button to pretty-print the JSON with proper indentation.",
+          "If the input is not valid JSON, an error message will be displayed.",
+          "Click the 'Reset' button to clear both input and output.",
+        ],
+      },
     },
     randomPassword: {
       title: "Random Password Generator",
@@ -371,18 +460,45 @@ export const translations = {
       generateButton: "Generate",
       lengthMin: 4,
       lengthMax: 50,
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the desired length of the password in the number input.",
+          "Click the Generate button to create a random password below.",
+          "Use the Copy button to copy the password to your clipboard.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     slugify: {
       title: "Slugify Converter",
       inputPlaceholder: "e.g. Hello World! Next.js App",
       convertButton: "Convert",
       resultLabel: "Result",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to convert in the input field.",
+          "Click the Convert button to transform the text into a URL-friendly slug.",
+          "Use the Copy button next to the result to copy the slug to your clipboard.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     textToAscii: {
       title: "Text → ASCII Converter",
       inputPlaceholder: "e.g. Hello",
       convertButton: "Convert",
       resultLabel: "Result",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to convert in the input field.",
+          "Click the Convert button to transform each character into its ASCII code.",
+          "Use the Copy button next to the result to copy the ASCII codes to your clipboard.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     timestampConverter: {
       title: "Timestamp → Date Converter",
@@ -395,6 +511,15 @@ export const translations = {
       timestampLabel: "Timestamp",
       invalidTimestamp: "Invalid timestamp",
       invalidDate: "Invalid date",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter a timestamp and click 'Convert to Date' to see it in ISO format.",
+          "Enter a date and click 'Convert to Timestamp' to get the Unix timestamp.",
+          "Use the Copy button next to the result to copy it to your clipboard.",
+          "Click the Reset button to clear all input and results.",
+        ],
+      },
     },
     urlEncoderDecoder: {
       title: "URL Encoder/Decoder",
@@ -405,16 +530,45 @@ export const translations = {
       decodedLabel: "Decoded Result",
       encodeError: "⚠️ Encoding failed",
       decodeError: "⚠️ Decoding failed",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter text in the input area.",
+          "Click the 'Encode' button to convert it to URL-encoded format.",
+          "Click the 'Decode' button to convert a URL-encoded string back to normal text.",
+          "Use the Copy button next to the result to copy it to your clipboard.",
+          "Click the Reset button to clear all input and results.",
+        ],
+      },
     },
     uuidGenerator: {
       title: "UUID Generator",
       generateButton: "Generate New UUID",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Select the UUID version you want to generate (v1, v3, v4, v5).",
+          "Click the 'Generate' button to create a UUID.",
+          "The generated UUID will appear in the result area.",
+          "Use the Copy button next to the result to copy the UUID to your clipboard.",
+          "Click the Reset button to clear the generated UUID.",
+        ],
+      },
     },
     wordCounter: {
       title: "Word & Character Counter",
       placeholder: "Enter text...",
       wordLabel: "Words",
       charLabel: "Characters",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter your text into the textarea.",
+          "The number of words and characters will be displayed in real-time below.",
+          "Click the copy button next to each number to copy the word or character count to the clipboard.",
+          "Click the Reset button to clear the input and results.",
+        ],
+      },
     },
     actionButtons: {
       backButton: "Go Back",
@@ -426,6 +580,15 @@ export const translations = {
       generateButton: "Generate QR Code",
       downloadButton: "Download",
       actionButtons: { reset: "Reset" },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text you want to convert into a QR code in the input area.",
+          "Click the Generate QR button to display the QR code below.",
+          "Use the Copy button to copy the text or the Download button to save the QR code as an SVG file.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     regexTester: {
       title: "Regex Tester",
@@ -435,6 +598,16 @@ export const translations = {
       invalidRegex: "Invalid regex pattern",
       noMatch: "No matches found",
       resultLabel: "Result",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the regex pattern in the pattern input field.",
+          "Enter the text to test against in the text area.",
+          "Click the Test button to see all matches below.",
+          "Use the Copy button to copy the matches to your clipboard.",
+          "Click the Reset button to clear the inputs and results.",
+        ],
+      },
     },
     loremIpsum: {
       title: "Lorem Ipsum Generator",
@@ -442,6 +615,15 @@ export const translations = {
       generateButton: "Generate",
       resultLabel: "Result",
       noResult: "Nothing generated yet",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the number of paragraphs you want to generate.",
+          "Click the Generate button to create Lorem Ipsum text with the specified number of paragraphs.",
+          "Check the generated text in the result area and use the Copy button to copy it.",
+          "Click the Reset button to clear the input and the result.",
+        ],
+      },
     },
     wikiSummary: {
       title: "Wikipedia Summarizer",
@@ -451,6 +633,16 @@ export const translations = {
       noResult: "No result yet",
       notFound: "No summary found",
       error: "An error occurred while fetching summary",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the Wikipedia topic you want to search for.",
+          "Click the 'Search' button to fetch the summary for the topic.",
+          "If a summary exists, it will be displayed in the result area.",
+          "If not, a 'Not Found' message will be shown.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     timeDiff: {
       title: "Time Difference Calculator",
@@ -463,6 +655,16 @@ export const translations = {
       minute: "m",
       second: "s",
       actionButtons: { reset: "Reset" },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the start date and time.",
+          "Enter the end date and time.",
+          "Click the Calculate button to see the difference in days, hours, minutes, and seconds.",
+          "Use the Copy button next to the result to copy it to your clipboard.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
     },
     diffChecker: {
       title: "Diff Checker",
@@ -475,6 +677,16 @@ export const translations = {
         backButton: "Back",
         resetButton: "Reset",
       },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the text to compare in Text A and Text B fields.",
+          "Click the 'Compare' button to see the differences between the two texts.",
+          "Differences are indicated with '-' for Text A and '+' for Text B.",
+          "Click the copy button next to the result to copy it to the clipboard.",
+          "Click the 'Reset' button to clear both input and output fields.",
+        ],
+      },
     },
     markdownToHtml: {
       title: "Markdown to HTML Converter",
@@ -485,6 +697,15 @@ export const translations = {
       actionButtons: {
         backButton: "Back",
         resetButton: "Reset",
+      },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter your Markdown text in the input area.",
+          "Click the Convert button to render the Markdown as HTML.",
+          "Check the rendered HTML in the result area and use the Copy button to copy it.",
+          "Click the Reset button to clear the input and result.",
+        ],
       },
     },
     jwtEncoderDecoder: {
@@ -501,6 +722,16 @@ export const translations = {
       encodeError: "Error occurred during encoding.",
       outputLabel: "Result",
       noOutput: "No result.",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter a JWT string to decode its content.",
+          "Decoded Header and Payload will be pretty-printed in JSON format.",
+          "To encode, enter a JSON object with the structure { header: {...}, payload: {...} }.",
+          "Click the Encode button to generate a base64url JWT string.",
+          "Click the Reset button to clear input and output.",
+        ],
+      },
     },
     cssColorPalette: {
       title: "CSS Color Palette Generator",
@@ -509,6 +740,16 @@ export const translations = {
       clickToCopy: "Click to copy color code",
       actionButtons: {
         reset: "Reset",
+      },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Select a base color using the color picker.",
+          "Click the 'Generate Palette' button to create a color palette with adjusted brightness based on the selected color.",
+          "The generated color palette will be displayed on the screen.",
+          "Click any color block to copy its HEX code to the clipboard.",
+          "Click the 'Reset' button to reset the base color and the palette.",
+        ],
       },
     },
     csvJson: {
@@ -521,6 +762,17 @@ export const translations = {
       noResult: "No result",
       actionButtons: {
         reset: "Reset",
+      },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter CSV or JSON data into the input area.",
+          "Click the 'Convert to JSON' button to convert CSV to JSON.",
+          "Click the 'Convert to CSV' button to convert JSON to CSV.",
+          "The converted result will be displayed in the output area.",
+          "Click the copy button next to the result to copy it to the clipboard.",
+          "Click the 'Reset' button to clear the input and output fields.",
+        ],
       },
     },
     htmlTableGenerator: {
@@ -535,6 +787,15 @@ export const translations = {
       actionButtons: {
         reset: "Reset",
       },
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the number of rows and columns for the table.",
+          "Click the 'Generate' button to create the HTML table code.",
+          "Use the copy button next to the result to copy the generated HTML code to the clipboard.",
+          "Click the 'Reset' button to clear both input and output fields.",
+        ],
+      },
     },
     httpStatus: {
       title: "HTTP Status Code Checker",
@@ -542,6 +803,15 @@ export const translations = {
       checkButton: "Check",
       notFound: "Unknown status code.",
       noResult: "Enter a status code to see its description.",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter an HTTP status code (e.g., 200, 404).",
+          "Click the 'Check' button to see the description of the status code.",
+          "If no description is found, a 'Not Found' message will be displayed.",
+          "Click the 'Reset' button to clear both input and output.",
+        ],
+      },
     },
     urlQueryParser: {
       title: "URL Query Parser/Builder",
@@ -551,6 +821,17 @@ export const translations = {
       buildButton: "Build Query String",
       buildResultLabel: "Built Query String",
       parseError: "Error occurred while parsing",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter a URL or query string in the input field.",
+          "Click the 'Parse' button to display the query parameters as key-value pairs.",
+          "You can edit the values of the parameters directly.",
+          "Click the 'Build' button to generate a new query string from the edited parameters.",
+          "Use the Copy button next to the result to copy the generated query string to your clipboard.",
+          "Click the Reset button to clear all input and results.",
+        ],
+      },
     },
     uuidValidator: {
       title: "UUID Validator",
@@ -561,6 +842,32 @@ export const translations = {
       invalidResult: "Invalid UUID format.",
       versionLabel: "UUID Version",
       noResult: "No result to show.",
+      tutorial: {
+        title: "How to Use",
+        steps: [
+          "Enter the UUID you want to validate.",
+          "Click the 'Validate' button to check if the UUID is valid.",
+          "If valid, the result area will show 'Valid' and display the UUID version.",
+          "If invalid, 'Invalid' will be displayed.",
+          "Click the Reset button to clear the input and result.",
+        ],
+      },
+    },
+    escapeConverter: {
+      title: "Escape Character Converter",
+      inputPlaceholder: "Enter text here...",
+      convertButton: "Convert",
+      resultLabel: "Result",
+      resetButton: "Reset",
+      tutorial: {
+        title: "How to use",
+        steps: [
+          "Enter the text you want to convert in the box above.",
+          "Click the 'Convert' button to transform it into escape characters.",
+          "Use the copy button next to the result to copy to clipboard.",
+          "Click 'Reset' to clear both input and result.",
+        ],
+      },
     },
   },
   ja: {
@@ -828,11 +1135,27 @@ export const translations = {
         desc: "文字列が正しいUUIDか検証します",
         keywords: ["uuid", "検証", "バリデート", "確認", "validator"],
       },
+      {
+        href: "/escape-converter",
+        label: "エスケープ文字変換器",
+        desc: "エスケープ文字変換器",
+        keywords: ["エスケープ", "文字", "変換", "文字列", "コンバーター"],
+      },
     ],
     asciiToText: {
       title: "ASCII → テキスト変換機",
       placeholder: "例: 72 101 108 108 111",
       button: "変換",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "変換したいASCIIコード（数字）を入力します。（例: 72 101 108 108 111）",
+          "数字はスペース、カンマ、セミコロンなどで区切ることができます。",
+          "「変換」ボタンをクリックすると、ASCIIコードがテキストに変換されます。",
+          "結果の横にあるコピー ボタンでテキストをクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     baseConverter: {
       title: "進数変換機",
@@ -855,6 +1178,16 @@ export const translations = {
         "32": "32進数",
       },
       invalidValue: "❌ 無効な入力",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力基数（2、8、10、16、32のいずれか）を選択します。",
+          "選択した基数に合った数値を入力します。",
+          "「変換する」ボタンをクリックすると、2進数、8進数、10進数、16進数、32進数の結果が表示されます。",
+          "各結果の横にあるコピー ボタンで、その値をクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、すべての入力と結果が初期化されます。",
+        ],
+      },
     },
 
     base64EncoderDecoder: {
@@ -866,15 +1199,37 @@ export const translations = {
       decodeResultLabel: "デコード結果",
       encodeError: "⚠️ エンコード失敗（有効な文字列か確認してください）",
       decodeError: "⚠️ デコード失敗（有効なBase64文字列か確認してください）",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "変換したいテキストを入力します。",
+          "「エンコード」ボタンをクリックすると、テキストがBase64形式に変換されます。",
+          "「デコード」ボタンをクリックすると、Base64文字列が元のテキストに変換されます。",
+          "結果の横にあるコピー ボタンで結果をクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     caseConverter: {
       title: "ケース変換機",
       placeholder: "テキストを入力してください...",
       buttons: {
-        upper: "UPPERCASE",
-        lower: "lowercase",
-        snake: "snake_case",
-        camel: "camelCase",
+        upper: "大文字",
+        lower: "小文字",
+        snake: "スネークケース",
+        camel: "キャメルケース",
+      },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "テキストを入力欄に入力します。",
+          "「大文字」ボタンを押すと、すべて大文字に変換されます。",
+          "「小文字」ボタンを押すと、すべて小文字に変換されます。",
+          "「スネークケース」ボタンを押すと、単語がアンダースコアで区切られた小文字形式になります。",
+          "「キャメルケース」ボタンを押すと、先頭単語は小文字、それ以降の単語は先頭が大文字になる形式に変換されます。",
+          "結果は出力欄に表示され、コピーアイコンをクリックするとクリップボードにコピーできます。",
+          "「リセット」ボタンで入力と結果を初期化できます。",
+        ],
       },
     },
     colorConverter: {
@@ -890,12 +1245,34 @@ export const translations = {
       invalidRgb: "無効なRGB形式です。",
       hexLabel: "HEX",
       rgbLabel: "RGB",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "HEXカラーコードを入力欄に入力します（例: #FF5733 または F53）。",
+          "「HEX → RGB」ボタンをクリックすると、RGB形式に変換されます。",
+          "RGBの結果は出力欄に表示され、コピーアイコンでクリップボードにコピーできます。",
+          "RGB値を入力欄に入力します（例: rgb(255, 87, 51) または 255,87,51）。",
+          "「RGB → HEX」ボタンをクリックすると、HEX形式に変換されます。",
+          "HEXの結果は出力欄に表示され、コピーアイコンでコピーできます。",
+          "「リセット」ボタンをクリックすると、すべての入力と結果が初期化されます。",
+        ],
+      },
     },
 
     hashGenerator: {
       title: "SHA-256 ハッシュ生成器",
       inputPlaceholder: "テキストを入力してください...",
       generateButton: "ハッシュ生成",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "ハッシュを生成したいテキストを入力します。",
+          "「生成」ボタンをクリックすると、SHA-256ハッシュが作成されます。",
+          "結果は下のボックスに16進数の文字列として表示されます。",
+          "結果の横にあるコピー ボタンをクリックすると、ハッシュをクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     htmlEntities: {
       title: "HTMLエンティティ エンコード/デコード",
@@ -904,12 +1281,31 @@ export const translations = {
       decodeButton: "デコード",
       encodeResultLabel: "エンコード結果",
       decodeResultLabel: "デコード結果",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "変換したいテキストを入力します。",
+          "「エンコード」ボタンをクリックすると、HTMLエンティティに変換されます。",
+          "「デコード」ボタンをクリックすると、HTMLエンティティが通常のテキストに戻されます。",
+          "結果の横にあるコピー ボタンで変換されたテキストをクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     jsonFormatter: {
       title: "JSONフォーマッター",
       inputPlaceholder: '{"hello": "world"}',
       formatButton: "フォーマット",
       invalidJson: "⚠️ 有効なJSONではありません。",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "JSONデータを入力します。",
+          "「フォーマット」ボタンをクリックすると、JSONが見やすくインデントされて表示されます。",
+          "入力が有効なJSONでない場合は、エラーメッセージが表示されます。",
+          "「リセット」ボタンをクリックすると、入力と出力が初期化されます。",
+        ],
+      },
     },
     randomPassword: {
       title: "ランダムパスワード生成器",
@@ -917,18 +1313,45 @@ export const translations = {
       generateButton: "生成",
       lengthMin: 4,
       lengthMax: 50,
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "数字入力欄に生成するパスワードの長さを指定してください。",
+          "生成ボタンをクリックすると、下にランダムなパスワードが表示されます。",
+          "コピー ボタンでパスワードをクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     slugify: {
       title: "Slugify 変換機",
       inputPlaceholder: "例: Hello World! Next.js App",
       convertButton: "変換",
       resultLabel: "結果",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "変換したい文章を入力欄に入力してください。",
+          "変換ボタンをクリックすると、文章がURL向けのスラッグに変換されます。",
+          "結果の横のコピー ボタンでスラッグをクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     textToAscii: {
       title: "テキスト → ASCII 変換機",
       inputPlaceholder: "例: Hello",
       convertButton: "変換",
       resultLabel: "結果",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "変換したいテキストを入力欄に入力してください。",
+          "変換ボタンをクリックすると、各文字がASCIIコードに変換されます。",
+          "結果の横のコピー ボタンでASCIIコードをクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     timestampConverter: {
       title: "タイムスタンプ → 日付 変換機",
@@ -941,6 +1364,15 @@ export const translations = {
       timestampLabel: "タイムスタンプ",
       invalidTimestamp: "無効なタイムスタンプ",
       invalidDate: "無効な日付",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "タイムスタンプを入力して「Dateに変換」ボタンをクリックすると、ISO形式で表示されます。",
+          "日付を入力して「Timestampに変換」ボタンをクリックすると、Unixタイムスタンプに変換されます。",
+          "結果の横のコピー ボタンで変換結果をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     urlEncoderDecoder: {
       title: "URL エンコード/デコード",
@@ -951,16 +1383,45 @@ export const translations = {
       decodedLabel: "デコード結果",
       encodeError: "⚠️ エンコードに失敗しました",
       decodeError: "⚠️ デコードに失敗しました",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力欄にテキストを入力します。",
+          "「エンコード」ボタンをクリックすると、URLエンコード形式に変換されます。",
+          "「デコード」ボタンをクリックすると、URLエンコードされた文字列を元のテキストに戻せます。",
+          "結果の横のコピー ボタンで結果をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     uuidGenerator: {
       title: "UUID ジェネレーター",
       generateButton: "新しいUUIDを生成",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "生成するUUIDのバージョンを選択します (v1, v3, v4, v5)。",
+          "「生成」ボタンをクリックするとUUIDが作成されます。",
+          "生成されたUUIDは結果欄に表示されます。",
+          "結果欄のコピー ボタンでUUIDをクリップボードにコピーできます。",
+          "リセットボタンをクリックすると生成されたUUIDがリセットされます。",
+        ],
+      },
     },
     wordCounter: {
       title: "単語と文字のカウント",
       placeholder: "テキストを入力してください...",
       wordLabel: "単語数",
       charLabel: "文字数",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "テキストエリアに文章を入力します。",
+          "入力したテキストの単語数と文字数がリアルタイムで表示されます。",
+          "各数字の横のコピー ボタンをクリックして、単語数や文字数をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、テキスト入力と結果がリセットされます。",
+        ],
+      },
     },
     actionButtons: {
       backButton: "戻る",
@@ -972,6 +1433,15 @@ export const translations = {
       generateButton: "QRコードを生成",
       downloadButton: "ダウンロード",
       actionButtons: { reset: "リセット" },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力欄にQRコードに変換したいテキストを入力してください。",
+          "QRコード生成ボタンをクリックすると、下にQRコードが表示されます。",
+          "コピー ボタンでテキストをコピーしたり、ダウンロード ボタンでQRコードをSVGファイルとして保存できます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     regexTester: {
       title: "正規表現テスター",
@@ -981,6 +1451,16 @@ export const translations = {
       invalidRegex: "無効な正規表現です",
       noMatch: "一致するものがありません",
       resultLabel: "結果",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "パターン入力欄に正規表現を入力してください。",
+          "テキスト入力欄に対象文字列を入力してください。",
+          "テストボタンをクリックすると、一致する結果が下に表示されます。",
+          "コピー ボタンで結果をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     loremIpsum: {
       title: "Lorem Ipsum ジェネレーター",
@@ -988,6 +1468,15 @@ export const translations = {
       generateButton: "生成",
       resultLabel: "結果",
       noResult: "まだ生成されていません",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "生成する段落の数を入力してください。",
+          "生成ボタンをクリックすると、指定した段落数のLorem Ipsumテキストが作成されます。",
+          "結果エリアでテキストを確認し、コピー ボタンでコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     wikiSummary: {
       title: "Wikipedia サマリー",
@@ -997,6 +1486,16 @@ export const translations = {
       noResult: "まだ結果がありません",
       notFound: "要約が見つかりません",
       error: "要約の取得中にエラーが発生しました",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "検索したいWikipediaのトピックを入力します。",
+          "「検索」ボタンをクリックすると、そのトピックの要約情報が取得されます。",
+          "要約が存在する場合、結果欄に表示されます。",
+          "要約が存在しない場合、「見つかりません」と表示されます。",
+          "リセットボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     timeDiff: {
       title: "時間差計算機",
@@ -1009,6 +1508,16 @@ export const translations = {
       minute: "分",
       second: "秒",
       actionButtons: { reset: "リセット" },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "開始日時を入力してください。",
+          "終了日時を入力してください。",
+          "計算ボタンをクリックすると、2つの日付の間の差（日、時間、分、秒）が表示されます。",
+          "結果の横のコピー ボタンで計算結果をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     diffChecker: {
       title: "差分チェッカー",
@@ -1021,6 +1530,16 @@ export const translations = {
         backButton: "戻る",
         resetButton: "リセット",
       },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "比較したいテキストAとテキストBをそれぞれ入力します。",
+          "「比較」ボタンをクリックすると、2つのテキストの差分が表示されます。",
+          "差分は'-'がテキストA、'+'がテキストBを示します。",
+          "結果の横にあるコピー ボタンをクリックすると、クリップボードにコピーされます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     markdownToHtml: {
       title: "Markdown → HTML 変換器",
@@ -1031,6 +1550,15 @@ export const translations = {
       actionButtons: {
         backButton: "戻る",
         resetButton: "リセット",
+      },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力欄にMarkdownテキストを記入してください。",
+          "変換ボタンをクリックすると、MarkdownがHTMLとしてレンダリングされます。",
+          "結果エリアでレンダリングされたHTMLを確認し、コピー ボタンでコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
       },
     },
     jwtEncoderDecoder: {
@@ -1047,6 +1575,16 @@ export const translations = {
       encodeError: "エンコード中にエラーが発生しました。",
       outputLabel: "結果",
       noOutput: "結果がありません。",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "JWT文字列を入力すると、内容をデコードできます。",
+          "デコードされたHeaderとPayloadは見やすいJSON形式で表示されます。",
+          "エンコードするには、{ header: {...}, payload: {...} } のJSON形式を入力してください。",
+          "エンコードボタンをクリックすると、base64url形式のJWT文字列が生成されます。",
+          "リセットボタンをクリックすると、入力と出力が初期化されます。",
+        ],
+      },
     },
     cssColorPalette: {
       title: "CSSカラーパレットジェネレーター",
@@ -1055,6 +1593,16 @@ export const translations = {
       clickToCopy: "クリックしてカラーコードをコピー",
       actionButtons: {
         reset: "リセット",
+      },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "カラーピッカーで基本色を選択します。",
+          "「パレット生成」ボタンをクリックすると、選択した色を基に明るさを調整したカラーパレットが生成されます。",
+          "生成されたカラーパレットは画面に表示されます。",
+          "各色のブロックをクリックすると、HEXコードがクリップボードにコピーされます。",
+          "「リセット」ボタンをクリックすると、基本色とパレットが初期化されます。",
+        ],
       },
     },
     csvJson: {
@@ -1067,6 +1615,17 @@ export const translations = {
       noResult: "結果がありません。",
       actionButtons: {
         reset: "リセット",
+      },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力欄にCSVまたはJSONデータを入力します。",
+          "「JSONに変換」ボタンをクリックするとCSVがJSONに変換されます。",
+          "「CSVに変換」ボタンをクリックするとJSONがCSVに変換されます。",
+          "変換結果は出力欄に表示されます。",
+          "結果の横にあるコピー ボタンをクリックすると、クリップボードにコピーされます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
       },
     },
     htmlTableGenerator: {
@@ -1081,6 +1640,15 @@ export const translations = {
       actionButtons: {
         reset: "リセット",
       },
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "テーブルの行数と列数を入力します。",
+          "「生成」ボタンをクリックすると、HTMLテーブルコードが作成されます。",
+          "結果の横にあるコピー ボタンで生成されたHTMLコードをクリップボードにコピーできます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     httpStatus: {
       title: "HTTPステータスコードチェッカー",
@@ -1088,6 +1656,15 @@ export const translations = {
       checkButton: "確認",
       notFound: "不明なステータスコードです。",
       noResult: "説明を確認するにはステータスコードを入力してください。",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "HTTPステータスコードを入力します（例: 200, 404）。",
+          "「確認」ボタンをクリックすると、ステータスコードの説明が表示されます。",
+          "説明がない場合は「見つかりません」というメッセージが表示されます。",
+          "「リセット」ボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
     },
     urlQueryParser: {
       title: "URLクエリパーサー／ビルダー",
@@ -1098,6 +1675,17 @@ export const translations = {
       buildButton: "クエリ文字列を作成",
       buildResultLabel: "作成されたクエリ文字列",
       parseError: "解析中にエラーが発生しました",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "入力欄にURLまたはクエリ文字列を入力します。",
+          "「パース」ボタンをクリックすると、クエリパラメータがキーと値の形式で表示されます。",
+          "表示されたパラメータの値を直接編集できます。",
+          "「ビルド」ボタンをクリックすると、編集したパラメータから新しいクエリ文字列が生成されます。",
+          "結果の横のコピー ボタンで生成されたクエリ文字列をクリップボードにコピーできます。",
+          "リセットボタンをクリックすると、入力と結果がリセットされます。",
+        ],
+      },
     },
     uuidValidator: {
       title: "UUIDバリデーター",
@@ -1108,6 +1696,32 @@ export const translations = {
       invalidResult: "無効なUUID形式です。",
       versionLabel: "UUIDバージョン",
       noResult: "結果はありません。",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "検証したいUUIDを入力します。",
+          "「検証」ボタンをクリックすると、UUIDが有効か確認できます。",
+          "有効な場合、結果欄に「有効」と表示され、UUIDのバージョンも確認できます。",
+          "無効な場合、「無効」と表示されます。",
+          "リセットボタンをクリックすると、入力と結果が初期化されます。",
+        ],
+      },
+    },
+    escapeConverter: {
+      title: "エスケープ文字変換",
+      inputPlaceholder: "テキストを入力してください...",
+      convertButton: "変換",
+      resultLabel: "結果",
+      resetButton: "リセット",
+      tutorial: {
+        title: "使い方",
+        steps: [
+          "上のテキストボックスに変換したい文字列を入力してください。",
+          "「変換」ボタンを押すと文字列がエスケープ文字に変換されます。",
+          "結果横のコピー ボタンでクリップボードにコピーできます。",
+          "「リセット」ボタンで入力と結果をすべてクリアできます。",
+        ],
+      },
     },
   },
   ko: {
@@ -1390,11 +2004,35 @@ export const translations = {
         desc: "UUID 형식이 올바른지 검증합니다",
         keywords: ["uuid", "검증", "validator", "확인", "유효성", "検証"],
       },
+      {
+        href: "/escape-converter",
+        label: "이스케이프 문자 변환기",
+        desc: "문자열을 이스케이프 문자로 변환합니다",
+        keywords: [
+          "escape",
+          "이스케이프",
+          "문자",
+          "변환",
+          "converter",
+          "文字列",
+          "変換",
+        ],
+      },
     ],
     asciiToText: {
       title: "ASCII → Text 변환기",
       placeholder: "예: 72 101 108 108 111 ",
       button: "변환",
+      tutorial: {
+        title: "사용 방법",
+        steps: [
+          "변환할 ASCII 코드(숫자)를 입력합니다. (예: 72 101 108 108 111)",
+          "각 숫자는 공백, 쉼표, 세미콜론 등으로 구분할 수 있습니다.",
+          '"변환" 버튼을 클릭하면 해당 ASCII 코드가 텍스트로 변환됩니다.',
+          "결과 옆의 복사 버튼을 눌러 텍스트를 클립보드에 복사할 수 있습니다.",
+          '"리셋" 버튼을 클릭하면 입력과 결과가 모두 초기화됩니다.',
+        ],
+      },
     },
     baseConverter: {
       title: "진수 변환기",
@@ -1417,6 +2055,16 @@ export const translations = {
         base32: "32진수",
       },
       invalidValue: "❌ 잘못된 입력",
+      tutorial: {
+        title: "사용 방법",
+        steps: [
+          "입력 진법(2, 8, 10, 16, 32 중 하나)을 선택합니다.",
+          "선택한 진법에 맞는 숫자를 입력합니다.",
+          "「변환하기」 버튼을 클릭하면 2진수, 8진수, 10진수, 16진수, 32진수 결과가 표시됩니다.",
+          "각 결과 옆의 복사 버튼을 눌러 해당 값을 클립보드에 복사할 수 있습니다.",
+          "「리셋」 버튼을 클릭하면 모든 입력과 결과가 초기화됩니다.",
+        ],
+      },
     },
     base64EncoderDecoder: {
       title: "Base64 인코딩/디코딩",
@@ -1427,15 +2075,37 @@ export const translations = {
       decodeResultLabel: "디코딩 결과",
       encodeError: "⚠️ 인코딩 실패 (유효한 문자열인지 확인)",
       decodeError: "⚠️ 디코딩 실패 (유효한 Base64 문자열인지 확인)",
+      tutorial: {
+        title: "사용 방법",
+        steps: [
+          "변환할 텍스트를 입력합니다.",
+          "‘인코드’ 버튼을 누르면 텍스트가 Base64 형식으로 변환됩니다.",
+          "‘디코드’ 버튼을 누르면 Base64 문자열이 원래 텍스트로 변환됩니다.",
+          "결과 옆의 복사 버튼으로 결과를 클립보드에 복사할 수 있습니다.",
+          "‘리셋’ 버튼을 누르면 입력과 결과가 초기화됩니다.",
+        ],
+      },
     },
     caseConverter: {
       title: "Case 변환기",
       placeholder: "텍스트를 입력하세요...",
       buttons: {
-        upper: "UPPERCASE",
-        lower: "lowercase",
-        snake: "snake_case",
-        camel: "camelCase",
+        upper: "대문자",
+        lower: "소문자",
+        snake: "스네이크 케이스",
+        camel: "카멜 케이스",
+      },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "텍스트를 입력란에 입력합니다.",
+          "‘대문자’ 버튼을 클릭하면 모든 문자가 대문자로 변환됩니다.",
+          "‘소문자’ 버튼을 클릭하면 모든 문자가 소문자로 변환됩니다.",
+          "‘스네이크 케이스’ 버튼을 클릭하면 단어가 언더스코어로 연결된 소문자 형식으로 변환됩니다.",
+          "‘카멜 케이스’ 버튼을 클릭하면 첫 단어는 소문자, 이후 단어는 첫 글자가 대문자가 되도록 변환됩니다.",
+          "결과는 출력란에 표시되며, 복사 아이콘을 클릭하면 클립보드에 복사됩니다.",
+          "‘리셋’ 버튼을 클릭하면 입력과 결과가 초기화됩니다.",
+        ],
       },
     },
     colorConverter: {
@@ -1451,11 +2121,33 @@ export const translations = {
       invalidRgb: "유효하지 않은 RGB 형식입니다.",
       hexLabel: "HEX",
       rgbLabel: "RGB",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "HEX 색상 코드를 입력란에 입력합니다. (예: #FF5733 또는 F53)",
+          "‘HEX → RGB’ 버튼을 클릭하면 RGB 형식으로 변환됩니다.",
+          "RGB 결과는 출력란에 표시되며, 복사 아이콘으로 클립보드에 복사할 수 있습니다.",
+          "RGB 값을 입력란에 입력합니다. (예: rgb(255, 87, 51) 또는 255,87,51)",
+          "‘RGB → HEX’ 버튼을 클릭하면 HEX 형식으로 변환됩니다.",
+          "HEX 결과는 출력란에 표시되며, 복사 아이콘으로 클립보드에 복사할 수 있습니다.",
+          "‘리셋’ 버튼을 클릭하면 모든 입력과 결과가 초기화됩니다.",
+        ],
+      },
     },
     hashGenerator: {
       title: "SHA-256 해시 생성기",
       inputPlaceholder: "텍스트를 입력하세요...",
       generateButton: "해시 생성",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "해시를 생성할 텍스트를 입력합니다.",
+          "'생성' 버튼을 클릭하면 SHA-256 해시가 생성됩니다.",
+          "결과는 아래 박스에 16진수 문자열로 표시됩니다.",
+          "결과 옆의 복사 버튼을 클릭하면 해시를 클립보드에 복사할 수 있습니다.",
+          "'리셋' 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     htmlEntities: {
       title: "HTML 엔티티 인코딩/디코딩",
@@ -1464,12 +2156,31 @@ export const translations = {
       decodeButton: "디코딩",
       encodeResultLabel: "인코딩 결과",
       decodeResultLabel: "디코딩 결과",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "변환할 텍스트를 입력합니다.",
+          "'인코드' 버튼을 클릭하면 HTML 엔티티로 변환됩니다.",
+          "'디코드' 버튼을 클릭하면 HTML 엔티티가 일반 텍스트로 변환됩니다.",
+          "결과 옆의 복사 버튼으로 변환된 텍스트를 클립보드에 복사할 수 있습니다.",
+          "'리셋' 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     jsonFormatter: {
       title: "JSON 포맷터",
       inputPlaceholder: '{"hello": "world"}',
       formatButton: "포맷팅",
       invalidJson: "⚠️ 유효한 JSON이 아닙니다.",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "JSON 데이터를 입력합니다.",
+          "'포맷' 버튼을 클릭하면 JSON이 보기 좋게 들여쓰기되어 표시됩니다.",
+          "입력값이 올바른 JSON이 아니면 오류 메시지가 표시됩니다.",
+          "'리셋' 버튼을 클릭하면 입력과 출력이 초기화됩니다。",
+        ],
+      },
     },
     randomPassword: {
       title: "랜덤 비밀번호 생성기",
@@ -1477,18 +2188,45 @@ export const translations = {
       generateButton: "생성",
       lengthMin: 4,
       lengthMax: 50,
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "숫자 입력란에 생성할 비밀번호 길이를 지정하세요.",
+          "생성 버튼을 클릭하면 랜덤한 비밀번호가 아래에 표시됩니다.",
+          "복사 버튼을 눌러 비밀번호를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     slugify: {
       title: "Slugify 변환기",
       inputPlaceholder: "예: Hello World! Next.js App",
       convertButton: "변환",
       resultLabel: "결과",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "입력란에 변환할 문장을 입력하세요.",
+          "변환 버튼을 클릭하면 문장이 URL 친화적인 슬러그로 변환됩니다.",
+          "결과 옆의 복사 버튼을 눌러 슬러그를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     textToAscii: {
       title: "Text → ASCII 변환기",
       inputPlaceholder: "예: Hello",
       convertButton: "변환",
       resultLabel: "결과",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "입력란에 변환할 텍스트를 입력하세요.",
+          "변환 버튼을 클릭하면 각 문자가 ASCII 코드로 변환됩니다.",
+          "결과 옆의 복사 버튼을 눌러 ASCII 코드를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     timestampConverter: {
       title: "타임스탬프 → 날짜 변환기",
@@ -1501,6 +2239,15 @@ export const translations = {
       timestampLabel: "타임스탬프",
       invalidTimestamp: "유효하지 않은 타임스탬프",
       invalidDate: "유효하지 않은 날짜",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "타임스탬프를 입력하고 'Date 변환' 버튼을 클릭하면 해당 시간을 ISO 형식으로 변환합니다.",
+          "날짜를 입력하고 'Timestamp 변환' 버튼을 클릭하면 유닉스 타임스탬프로 변환됩니다.",
+          "결과 옆의 복사 버튼으로 변환 결과를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     urlEncoderDecoder: {
       title: "URL 인코딩/디코딩",
@@ -1511,20 +2258,49 @@ export const translations = {
       decodedLabel: "디코딩 결과",
       encodeError: "⚠️ 인코딩 실패",
       decodeError: "⚠️ 디코딩 실패",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "입력창에 텍스트를 입력합니다.",
+          "'인코딩' 버튼을 클릭하면 URL-safe 형식으로 인코딩됩니다.",
+          "'디코딩' 버튼을 클릭하면 URL 인코딩된 문자열이 원래 텍스트로 복원됩니다.",
+          "결과 옆의 복사 버튼으로 인코딩/디코딩 결과를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     uuidGenerator: {
       title: "UUID 생성기",
       generateButton: "새 UUID 생성",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "생성할 UUID 버전을 선택합니다 (v1, v3, v4, v5).",
+          "선택 후 '생성' 버튼을 클릭하면 UUID가 생성됩니다.",
+          "생성된 UUID는 결과 영역에 표시됩니다.",
+          "결과 영역 옆의 복사 버튼을 클릭하여 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 생성된 UUID가 초기화됩니다。",
+        ],
+      },
     },
     wordCounter: {
       title: "단어 및 글자 수 세기",
       placeholder: "텍스트를 입력하세요...",
       wordLabel: "단어 수",
       charLabel: "글자 수",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "텍스트 영역에 원하는 문장을 입력합니다.",
+          "입력한 텍스트의 단어 수와 문자 수가 아래에서 실시간으로 표시됩니다.",
+          "각 숫자 옆의 복사 버튼을 눌러 단어 수 또는 문자 수를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 텍스트 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     actionButtons: {
       backButton: "뒤로 가기",
-      resetButton: "초기화",
+      resetButton: "리셋",
     },
     qrCodeGenerator: {
       title: "QR 코드 생성기",
@@ -1532,6 +2308,15 @@ export const translations = {
       generateButton: "QR 코드 생성",
       downloadButton: "다운로드",
       actionButtons: { reset: "초기화" },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "입력란에 QR 코드로 변환할 텍스트를 작성하세요.",
+          "QR 코드 생성 버튼을 클릭하면 아래에 QR 코드가 표시됩니다.",
+          "복사 버튼을 눌러 텍스트를 복사하거나, 다운로드 버튼으로 SVG 파일을 저장할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     regexTester: {
       title: "정규식 테스트",
@@ -1541,6 +2326,16 @@ export const translations = {
       invalidRegex: "유효하지 않은 정규식입니다",
       noMatch: "일치하는 항목이 없습니다",
       resultLabel: "결과",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "패턴 입력란에 테스트할 정규식을 입력하세요.",
+          "텍스트 입력란에 대상 문자열을 입력하세요.",
+          "테스트 버튼을 클릭하면 매칭되는 결과가 아래에 표시됩니다.",
+          "복사 버튼을 눌러 결과를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     loremIpsum: {
       title: "Lorem Ipsum 생성기",
@@ -1548,6 +2343,15 @@ export const translations = {
       generateButton: "생성하기",
       resultLabel: "결과",
       noResult: "아직 생성되지 않았습니다",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "생성할 단락 수를 입력하세요.",
+          "생성 버튼을 클릭하면 Lorem Ipsum 텍스트가 지정한 단락 수만큼 생성됩니다.",
+          "결과 영역에서 텍스트를 확인하고, 복사 버튼으로 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     wikiSummary: {
       title: "위키백과 요약기",
@@ -1557,6 +2361,16 @@ export const translations = {
       noResult: "아직 결과가 없습니다",
       notFound: "결과를 찾을 수 없습니다",
       error: "요약을 가져오는 중 오류가 발생했습니다",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "검색할 위키피디아 주제를 입력합니다.",
+          "'검색' 버튼을 클릭하면 해당 주제의 요약 정보를 가져옵니다.",
+          "요약이 존재하면 결과 영역에 표시됩니다.",
+          "요약이 없으면 '찾을 수 없음' 메시지가 표시됩니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     timeDiff: {
       title: "시간 차이 계산기",
@@ -1569,6 +2383,16 @@ export const translations = {
       minute: "분",
       second: "초",
       actionButtons: { reset: "초기화" },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "시작 날짜와 시간을 입력하세요.",
+          "종료 날짜와 시간을 입력하세요.",
+          "계산 버튼을 클릭하면 두 날짜 사이의 일, 시간, 분, 초 차이를 보여줍니다.",
+          "결과 옆의 복사 버튼으로 계산 결과를 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     diffChecker: {
       title: "차이 비교기",
@@ -1579,7 +2403,17 @@ export const translations = {
       noDifference: "차이가 없습니다",
       actionButtons: {
         backButton: "뒤로",
-        resetButton: "초기화",
+        resetButton: "리셋",
+      },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "비교할 텍스트 A와 텍스트 B를 각각 입력합니다.",
+          "'비교' 버튼을 클릭하면 두 텍스트의 차이점을 확인할 수 있습니다.",
+          "차이나는 부분은 '-'와 '+'로 표시됩니다.",
+          "결과 옆의 복사 버튼을 클릭하면 결과를 클립보드에 복사할 수 있습니다.",
+          "'리셋' 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
       },
     },
     markdownToHtml: {
@@ -1590,7 +2424,16 @@ export const translations = {
       noResult: "결과가 없습니다",
       actionButtons: {
         backButton: "뒤로",
-        resetButton: "초기화",
+        resetButton: "리셋",
+      },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "마크다운 텍스트를 입력란에 작성하세요.",
+          "변환 버튼을 클릭하면 입력한 마크다운이 HTML로 렌더링됩니다.",
+          "결과 영역에서 렌더링된 HTML을 확인하고, 복사 버튼으로 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
       },
     },
     jwtEncoderDecoder: {
@@ -1607,6 +2450,16 @@ export const translations = {
       encodeError: "인코딩 중 오류가 발생했습니다.",
       outputLabel: "결과",
       noOutput: "결과가 없습니다.",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "JWT 문자열을 입력하면 디코딩 결과를 확인할 수 있습니다.",
+          "디코딩 시 Header와 Payload를 보기 좋게 JSON 형식으로 출력합니다.",
+          "인코딩을 하려면 JSON 형식으로 { header: {...}, payload: {...} } 구조를 입력하세요.",
+          "인코딩 버튼을 클릭하면 base64url 형식의 JWT 문자열이 생성됩니다.",
+          "리셋 버튼을 클릭하면 입력과 출력이 초기화됩니다。",
+        ],
+      },
     },
     cssColorPalette: {
       title: "CSS 컬러 팔레트 생성기",
@@ -1615,6 +2468,16 @@ export const translations = {
       clickToCopy: "클릭하여 색상 코드 복사",
       actionButtons: {
         reset: "초기화",
+      },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "색상 선택기에서 기본 색상을 선택합니다.",
+          "‘팔레트 생성’ 버튼을 클릭하면 선택한 색상을 기준으로 밝기 조절된 색상 팔레트가 생성됩니다.",
+          "생성된 색상 팔레트는 화면에 표시됩니다.",
+          "각 색상 블록을 클릭하면 HEX 색상 코드가 클립보드에 복사됩니다.",
+          "‘리셋’ 버튼을 클릭하면 기본 색상과 팔레트가 초기화됩니다。",
+        ],
       },
     },
     csvJson: {
@@ -1628,18 +2491,38 @@ export const translations = {
       actionButtons: {
         reset: "초기화",
       },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "CSV 또는 JSON 데이터를 입력합니다.",
+          "'JSON으로 변환' 버튼을 클릭하면 CSV가 JSON으로 변환됩니다.",
+          "'CSV로 변환' 버튼을 클릭하면 JSON이 CSV로 변환됩니다.",
+          "변환 결과는 아래 영역에 표시됩니다.",
+          "결과 옆의 복사 버튼을 클릭하면 클립보드에 복사됩니다.",
+          "‘리셋’ 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     htmlTableGenerator: {
       title: "HTML 테이블 생성기",
       rowsPlaceholder: "행 개수 입력 (예: 3)",
       colsPlaceholder: "열 개수 입력 (예: 4)",
       generateButton: "테이블 생성",
-      resetButton: "초기화",
+      resetButton: "리셋",
       resultLabel: "생성된 HTML 테이블 코드",
       errorInvalidNumber: "올바른 숫자를 입력해 주세요 (1 이상).",
       noResult: "결과가 없습니다.",
       actionButtons: {
         reset: "초기화",
+      },
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "테이블의 행(Row)과 열(Column) 수를 입력합니다.",
+          "'생성' 버튼을 클릭하면 HTML 테이블 코드가 생성됩니다.",
+          "결과 옆의 복사 버튼을 눌러 생성된 HTML 코드를 클립보드에 복사할 수 있습니다.",
+          "'리셋' 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
       },
     },
     httpStatus: {
@@ -1648,6 +2531,15 @@ export const translations = {
       checkButton: "확인",
       notFound: "알 수 없는 상태 코드입니다.",
       noResult: "설명을 확인하려면 상태 코드를 입력하세요.",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "HTTP 상태 코드를 입력합니다 (예: 200, 404 등).",
+          "'확인' 버튼을 클릭하면 해당 코드의 설명이 표시됩니다.",
+          "설명이 없으면 '찾을 수 없음' 메시지가 표시됩니다.",
+          "'리셋' 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     urlQueryParser: {
       title: "URL 쿼리 파서/빌더",
@@ -1657,6 +2549,17 @@ export const translations = {
       buildButton: "쿼리 문자열 생성",
       buildResultLabel: "생성된 쿼리 문자열",
       parseError: "파싱 중 오류가 발생했습니다",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "입력창에 URL 또는 쿼리 문자열을 입력합니다.",
+          "'파싱' 버튼을 클릭하면 쿼리 파라미터가 키-값 객체로 표시됩니다.",
+          "표시된 파라미터 값을 직접 수정할 수 있습니다.",
+          "'빌드' 버튼을 클릭하면 수정된 파라미터로 새로운 쿼리 문자열이 생성됩니다.",
+          "결과 옆의 복사 버튼으로 생성된 쿼리 문자열을 클립보드에 복사할 수 있습니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
     },
     uuidValidator: {
       title: "UUID 검증기",
@@ -1667,6 +2570,32 @@ export const translations = {
       invalidResult: "잘못된 UUID 형식입니다.",
       versionLabel: "UUID 버전",
       invalid: "유효하지 않은 UUID입니다.",
+      tutorial: {
+        title: "사용법",
+        steps: [
+          "검증할 UUID를 입력합니다.",
+          "'검증' 버튼을 클릭하면 입력한 UUID가 유효한지 확인합니다.",
+          "유효하면 결과 영역에 '유효함'이 표시되고 UUID 버전도 확인할 수 있습니다.",
+          "유효하지 않으면 '유효하지 않음'이 표시됩니다.",
+          "리셋 버튼을 클릭하면 입력과 결과가 초기화됩니다。",
+        ],
+      },
+    },
+    escapeConverter: {
+      title: "이스케이프 문자 변환기",
+      inputPlaceholder: "텍스트를 입력하세요...",
+      convertButton: "변환",
+      resultLabel: "결과",
+      resetButton: "초기화",
+      tutorial: {
+        title: "사용 방법",
+        steps: [
+          "위 텍스트 박스에 변환할 문자열을 입력하세요.",
+          "‘변환’ 버튼을 누르면 문자열이 이스케이프 문자로 변환됩니다.",
+          "결과 옆 복사 버튼을 눌러 클립보드에 복사할 수 있습니다.",
+          "‘초기화’ 버튼으로 입력과 결과를 모두 초기화할 수 있습니다.",
+        ],
+      },
     },
   },
 } as const;
