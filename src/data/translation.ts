@@ -290,6 +290,22 @@ export const translations = {
         keywords: ["escape", "characters", "string", "converter"],
       },
     ],
+    allToolsTitle: "All Tools",
+    tutorialTitle: "How to Use",
+    tutorialSteps: [
+      "Search or select the tool you want.",
+      "Enter your input data.",
+      "Click the convert/validate button.",
+      "Copy and use the result.",
+    ],
+    faqTitle: "FAQ",
+    faq: [
+      { q: "Is this site free to use?", a: "Yes, it’s completely free." },
+      {
+        q: "Can I use it on mobile?",
+        a: "Yes, the site is fully responsive and works on mobile.",
+      },
+    ],
     asciiToText: {
       title: "ASCII → Text Converter",
       placeholder: "e.g. 72 101 108 108 111",
@@ -1140,6 +1156,22 @@ export const translations = {
         label: "エスケープ文字変換器",
         desc: "エスケープ文字変換器",
         keywords: ["エスケープ", "文字", "変換", "文字列", "コンバーター"],
+      },
+    ],
+    allToolsTitle: "全てのツール",
+    tutorialTitle: "使い方",
+    tutorialSteps: [
+      "使いたいツールを検索または一覧から選びます。",
+      "入力データを入力します。",
+      "変換/検証ボタンをクリックします。",
+      "結果をコピーして利用してください。",
+    ],
+    faqTitle: "よくある質問",
+    faq: [
+      { q: "このサイトは無料ですか？", a: "はい、すべて無料で利用できます。" },
+      {
+        q: "スマホでも使えますか？",
+        a: "はい、レスポンシブ対応なのでスマホでも問題なく使えます。",
       },
     ],
     asciiToText: {
@@ -2017,6 +2049,25 @@ export const translations = {
           "文字列",
           "変換",
         ],
+      },
+    ],
+    allToolsTitle: "전체 도구",
+    tutorialTitle: "사용 방법",
+    tutorialSteps: [
+      "원하는 도구를 검색하거나 목록에서 선택하세요.",
+      "입력값을 작성합니다.",
+      "변환/검증 버튼을 클릭하세요.",
+      "결과를 복사해 활용하세요.",
+    ],
+    faqTitle: "자주 묻는 질문",
+    faq: [
+      {
+        q: "이 사이트는 무료인가요?",
+        a: "네, 100% 무료로 이용할 수 있습니다.",
+      },
+      {
+        q: "모바일에서도 사용 가능한가요?",
+        a: "네, 반응형 UI라 모바일에서도 문제없이 동작합니다.",
       },
     ],
     asciiToText: {
