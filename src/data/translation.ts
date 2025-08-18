@@ -297,6 +297,8 @@ export const translations = {
       "Enter your input data.",
       "Click the convert/validate button.",
       "Copy and use the result.",
+      "Change the site language from the 🌐 Language menu.",
+      "Check the FAQ section for common questions.",
     ],
     faqTitle: "FAQ",
     faq: [
@@ -304,6 +306,22 @@ export const translations = {
       {
         q: "Can I use it on mobile?",
         a: "Yes, the site is fully responsive and works on mobile.",
+      },
+      {
+        q: "Do I need to sign up to use the tools?",
+        a: "No, you can use all the tools without creating an account.",
+      },
+      {
+        q: "Are my inputs and data saved?",
+        a: "No, everything runs locally in your browser. We don’t store any data.",
+      },
+      {
+        q: "Can I share the results with others?",
+        a: "Yes, you can copy the results and share them freely.",
+      },
+      {
+        q: "Will more tools be added in the future?",
+        a: "Yes, we plan to continuously add new utilities and improvements.",
       },
     ],
     asciiToText: {
@@ -1161,17 +1179,35 @@ export const translations = {
     allToolsTitle: "全てのツール",
     tutorialTitle: "使い方",
     tutorialSteps: [
-      "使いたいツールを検索または一覧から選びます。",
-      "入力データを入力します。",
+      "使いたいツールを検索または選択します。",
+      "入力データを入れます。",
       "変換/検証ボタンをクリックします。",
-      "結果をコピーして利用してください。",
+      "結果をコピーして利用します。",
+      "🌐 言語メニューからサイトの言語を変更できます。",
+      "FAQセクションでよくある質問を確認してください。",
     ],
     faqTitle: "よくある質問",
     faq: [
-      { q: "このサイトは無料ですか？", a: "はい、すべて無料で利用できます。" },
+      { q: "このサイトは無料で使えますか？", a: "はい、完全に無料です。" },
       {
-        q: "スマホでも使えますか？",
-        a: "はい、レスポンシブ対応なのでスマホでも問題なく使えます。",
+        q: "スマホでも利用できますか？",
+        a: "はい、このサイトはレスポンシブ対応なので、スマホでも快適に使えます。",
+      },
+      {
+        q: "ツールを使うのに会員登録は必要ですか？",
+        a: "いいえ、アカウント登録なしで全てのツールを利用できます。",
+      },
+      {
+        q: "入力したデータは保存されますか？",
+        a: "いいえ、すべてブラウザ内で処理され、データは保存されません。",
+      },
+      {
+        q: "結果を他の人と共有できますか？",
+        a: "はい、結果をコピーして自由に共有できます。",
+      },
+      {
+        q: "今後さらにツールが追加されますか？",
+        a: "はい、今後も新しいユーティリティや機能を追加していく予定です。",
       },
     ],
     asciiToText: {
@@ -2054,20 +2090,38 @@ export const translations = {
     allToolsTitle: "전체 도구",
     tutorialTitle: "사용 방법",
     tutorialSteps: [
-      "원하는 도구를 검색하거나 목록에서 선택하세요.",
-      "입력값을 작성합니다.",
+      "사용하고 싶은 도구를 검색하거나 선택하세요.",
+      "입력할 데이터를 넣으세요.",
       "변환/검증 버튼을 클릭하세요.",
-      "결과를 복사해 활용하세요.",
+      "결과를 복사해서 활용하세요.",
+      "🌐 언어 메뉴에서 사이트 언어를 변경할 수 있습니다.",
+      "자주 묻는 질문(FAQ)에서 궁금한 점을 확인하세요.",
     ],
     faqTitle: "자주 묻는 질문",
     faq: [
       {
-        q: "이 사이트는 무료인가요?",
-        a: "네, 100% 무료로 이용할 수 있습니다.",
+        q: "이 사이트는 무료로 사용할 수 있나요?",
+        a: "네, 완전히 무료입니다.",
       },
       {
-        q: "모바일에서도 사용 가능한가요?",
-        a: "네, 반응형 UI라 모바일에서도 문제없이 동작합니다.",
+        q: "모바일에서도 사용할 수 있나요?",
+        a: "네, 이 사이트는 반응형으로 제작되어 모바일에서도 잘 작동합니다.",
+      },
+      {
+        q: "도구를 사용하려면 회원가입이 필요한가요?",
+        a: "아니요, 계정 없이도 모든 도구를 사용할 수 있습니다.",
+      },
+      {
+        q: "제가 입력한 데이터가 저장되나요?",
+        a: "아니요, 모든 동작은 브라우저에서만 실행되며 데이터를 저장하지 않습니다.",
+      },
+      {
+        q: "결과를 다른 사람과 공유할 수 있나요?",
+        a: "네, 결과를 복사하여 자유롭게 공유할 수 있습니다.",
+      },
+      {
+        q: "앞으로 더 많은 도구가 추가되나요?",
+        a: "네, 지속적으로 새로운 유틸리티와 기능을 추가할 예정입니다.",
       },
     ],
     asciiToText: {

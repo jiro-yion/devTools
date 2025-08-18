@@ -26,7 +26,18 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
         <p className="text-gray-500 dark:text-gray-400">{t.description}</p>
       </section>
-
+      {/* Tutorial + FAQ Box */}
+      <section className="mt-12 border border-gray-200 dark:border-zinc-700 rounded-xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur shadow p-6 space-y-8">
+        {/* Tutorial */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">{t.tutorialTitle}</h2>
+          <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
+            {t.tutorialSteps.map((step: string, i: number) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+        </div>
+      </section>
       {/* 검색 */}
       <section>
         <input
@@ -61,32 +72,6 @@ export default function Home() {
               {t.noResults}
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Tutorial + FAQ Box */}
-      <section className="mt-12 border border-gray-200 dark:border-zinc-700 rounded-xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur shadow p-6 space-y-8">
-        {/* Tutorial */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">{t.tutorialTitle}</h2>
-          <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
-            {t.tutorialSteps.map((step: string, i: number) => (
-              <li key={i}>{step}</li>
-            ))}
-          </ol>
-        </div>
-
-        {/* FAQ */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">{t.faqTitle}</h2>
-          <div className="space-y-4">
-            {t.faq.map((item: { q: string; a: string }, i: number) => (
-              <div key={i} className="border-b pb-2 last:border-none">
-                <p className="font-semibold">Q. {item.q}</p>
-                <p className="text-gray-600 dark:text-gray-300">A. {item.a}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </main>
